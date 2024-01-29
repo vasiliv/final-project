@@ -55,6 +55,37 @@
             font-size: 1.5em;
             color: #FFD700;
         }
+        
+        /* Banner styling */
+        #banner {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #banner-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .banner-card {
+            width: 250px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .banner-image {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -63,19 +94,13 @@
     <h1>Hotel Reservation</h1>
 </header>
 
+<div id="banner-container">
+    <!-- Banner cards will be dynamically added here -->
+</div>
+
 <div class="container" id="hotel-container">
     <!-- Hotel cards will be dynamically added here -->
 </div>
-
-<!-- <div class="modal" id="modal">
-    <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">X</span>
-        <h2 id="modal-title"></h2>
-        <img id="modal-image" alt="">
-        <p id="modal-price"></p>
-        <span class="star-rating" id="star-rating"></span>
-    </div>
-</div> -->
 
 <script>
     // Sample hotel data with local image URLs
@@ -171,6 +196,21 @@
         // Navigate to a new page with hotel details
         window.location.href = `hotel-details.html?name=${hotel.name}&image=${hotel.image}&price=${hotel.price}`;
     }
+
+    // Banner code
+
+    // Sort hotels by stars in descending order
+    const sortedHotels = hotels.sort((a, b) => b.stars - a.stars);
+
+    // Display hotel cards in the banner
+    const bannerContainer = document.getElementById("banner-container");
+
+    sortedHotels.slice(0, 3).forEach(hotel => {
+        const card = document.createElement("div");
+        card.className = "banner-card";
+        card.innerHTML = `<h2>${hotel.name}</h2><p>${hotel.stars} stars</p><img class="banner-image" src="${hotel.image}" alt="${hotel.name}">`;
+        bannerContainer.appendChild(card);
+    });
 </script>
 
 </body>
