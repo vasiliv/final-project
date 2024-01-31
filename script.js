@@ -89,7 +89,9 @@ hotels.forEach(hotel => {
 
 function openHotelDetailsPage(hotel) {
     // Navigate to a new page with hotel details
-    window.location.href = `hotel-details.html?name=${hotel.name}&image=${hotel.image}&price=${hotel.price}`;
+    // window.location.href = `hotel-details.html?name=${hotel.name}&image=${hotel.image}&price=${hotel.price}`;
+    localStorage.setItem("hotelData", JSON.stringify(hotel))
+    window.location.href = "./details.html"
 }
 
 // Banner code
@@ -104,5 +106,6 @@ sortedHotels.slice(0, 3).forEach(hotel => {
     const card = document.createElement("div");
     card.className = "banner-card";
     card.innerHTML = `<h2>${hotel.name}</h2><p>${hotel.stars} stars</p><img class="banner-image" src="${hotel.image}" alt="${hotel.name}">`;
+    card.addEventListener("click", () => openHotelDetailsPage(hotel));
     bannerContainer.appendChild(card);
 });

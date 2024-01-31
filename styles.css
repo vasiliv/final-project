@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Trirong', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -10,6 +10,10 @@ header {
     color: white;
     text-align: center;
     padding: 1em;
+}
+
+h2{
+    text-align: center;
 }
 
 .container {
@@ -78,3 +82,40 @@ header {
     max-width: 100%;
     border-radius: 5px;
 }
+
+/* Navbar styling */
+nav {
+    background-color: gray;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;    
+  }
+
+  nav img {
+    width: 60px; /* Adjust the width of your logo */
+    height: 60px; /* Adjust the height of your logo */
+    display: inline-block;
+    vertical-align: middle;
+    float: left;
+  }
+
+  nav h1 {
+    display: inline-block;
+    color: white;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  nav a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }

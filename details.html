@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        .star-rating {
+            color: gold;
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        .button {
+            background-color: #04AA6D; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #04AA6D;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Hotel Details</h1>
+</header>
+
+<div id="hotelDetailsContainer">
+    <h1 id="hotelTitle"></h1>
+    <img id="hotelImage" alt="Hotel Image">
+    <div id="hotelStarRating"></div>
+    <h3 id = "hotelPrice"></h3>
+    <p id = "hotelDescription"></p>
+    <button class="button button1">Reserve</button>
+</div>
+
+<script>    
+    const data = localStorage.getItem("hotelData")
+
+    const hotel = JSON.parse(data)
+    
+    document.getElementById('hotelTitle').innerText = hotel.name;   
+    document.getElementById('hotelImage').src = hotel.image || 'default_image.jpg';
+    document.getElementById('hotelPrice').innerText = hotel.price;
+    document.getElementById('hotelDescription').innerText = hotel.description || 'No description available';
+    // document.getElementById('hotelStarRating').innerText = hotel.stars;
+    const starRating = document.createElement("div");
+    starRating.classList.add("star-rating");
+    console.log(hotel.stars)
+    for (let i = 0; i < 5; i++) {
+        const star = document.getElementById('star-rating');
+        star.textContent = i < hotel.stars ? "★" : "☆"; // Display filled star or empty star
+        starRating.appendChild(star);
+    }
+</script>
+
+</body>
+</html>
