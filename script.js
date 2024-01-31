@@ -91,7 +91,7 @@ function openHotelDetailsPage(hotel) {
     // Navigate to a new page with hotel details
     // window.location.href = `hotel-details.html?name=${hotel.name}&image=${hotel.image}&price=${hotel.price}`;
     localStorage.setItem("hotelData", JSON.stringify(hotel))
-    window.location.href = "./details.html"
+    window.location.href = "details.html"
 }
 
 // Banner code
