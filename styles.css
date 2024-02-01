@@ -1,6 +1,6 @@
 body {
     font-family: 'Trirong', 'Arial', sans-serif;
-    margin: 0;
+    margin: 5px;
     padding: 0;
     background-color: #f4f4f4;
 }
@@ -12,7 +12,7 @@ header {
     padding: 1em;
 }
 
-h2{
+h1, h2{
     text-align: center;
 }
 
@@ -20,6 +20,15 @@ h2{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 4px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
 
 .card {
@@ -49,10 +58,14 @@ h2{
 }
 
 .star-rating {
-    font-size: 1.5em;
-    color: #FFD700;
+  color: gold;
+  font-size: 2.2em;
+  margin-right: 5px;
 }
 
+.m-5{
+  margin: 5px;
+}
 /* Banner styling */
 #banner {
     background-color: #4CAF50;
@@ -154,12 +167,7 @@ nav {
   }
 
   /* Details page */
-  .star-rating {
-    color: gold;
-    font-size: 1.2em;
-    margin-right: 5px;
-}
-
+  
 .button {
     background-color: #04AA6D; /* Green */
     border: none;
