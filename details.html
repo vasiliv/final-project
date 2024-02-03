@@ -36,30 +36,9 @@
     
     <button class="button button1" id="reserveButton">Reserve</button>
 </div>
-
-<script>    
-    const data = localStorage.getItem("hotelData")
-
-    const hotel = JSON.parse(data)
-    
-    document.getElementById('hotelTitle').innerText = hotel.name;   
-    document.getElementById('hotelImage').src = hotel.image || 'default_image.jpg';
-    document.getElementById('hotelPrice').innerText = hotel.price;
-    document.getElementById('hotelDescription').innerText = hotel.description || 'No description available';
-    const reserveButton = document.getElementById('reserveButton')
-    reserveButton.addEventListener("click", function(){
-        alert("Reservation cost is: " + hotel.price)
-    });
-    // document.getElementById('hotelStarRating').innerText = hotel.stars;
-    // const starRating = document.createElement("div");
-    // starRating.classList.add("star-rating");
-    // console.log(hotel.stars)
-    // for (let i = 0; i < 5; i++) {
-    //     const star = document.getElementById('star-rating');
-    //     star.textContent = i < hotel.stars ? "★" : "☆"; // Display filled star or empty star
-    //     starRating.appendChild(star);
-    // }
-</script>
-
+<footer>
+    <p>&copy; 2024 Hotel Website. Created by Vasil Ivanishvili</p>
+</footer>
+    <script src="details.js"></script>
 </body>
 </html>
